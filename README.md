@@ -22,3 +22,24 @@ Linux Kernel (Ядро Linux)	Core OS (Ядро Darwin)	Фундамент си�
 2. Media Layer — Робота з графікою, аудіо та мультимедіа.
 3. Core Services Layer — Базові функції системи (мережеві запити, бази даних).
 4. Core OS / Darwin Layer — Головне ядро системи, файли та безпека
+
+Архітектурна діаграма
+```mermaid
+graph TD
+
+subgraph Android [Архітектура Android]
+A["Apps (Програми)"] --> B["Framework (Сервіси)"]
+B --> C["Runtime (Запуск коду)"]
+C --> D["HAL (Зв'язок із залізом)"]
+D --> E["Kernel (Ядро Linux)"]
+end
+
+subgraph iOS [Архітектура iOS]
+F["Cocoa Touch (Інтерфейс)"] --> G["Media Layer (Мультимедіа)"]
+G --> H["Core Services (Система)"]
+H --> I["Core OS (Ядро Darwin)"]
+end
+```
+
+
+
