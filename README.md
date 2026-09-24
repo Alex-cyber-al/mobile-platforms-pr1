@@ -71,10 +71,11 @@ end
 • Ціна та час: потрібно створювати та підтримувати два окремих додатки.
 
 6. Джерела
-Android Platform Architecture — https://source.android.com/docs/core/architecture (23.09.2026)
-About the iOS Technologies — https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/OSX_Technology_Overview/AbouttheiOSTechnologies/AbouttheiOSTechnologies.html (23.09.2026)
-Activity Lifecycle — https://developer.android.com/guide/components/activities/activity-lifecycle (23.09.2026)
-Managing Your App's Life Cycle — https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle (23.09.2026)
+## 6. Джерела
+* 1. Android Platform Architecture — https://android.com (23.09.2026)
+* 2. About the iOS Technologies — https://apple.com (23.09.2026)
+* 3. Activity Lifecycle — https://android.com (23.09.2026)
+* 4. Managing Your App's Life Cycle — https://apple.com (23.09.2026)
 
 
 
