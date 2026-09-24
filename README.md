@@ -40,6 +40,41 @@ G --> H["Core Services (Система)"]
 H --> I["Core OS (Ядро Darwin)"]
 end
 ```
+  3. Порівняння життєвого циклу екрана (Screen Lifecycle)
+Життєвий цикл — це стани, через які проходить екран додатка від моменту його відкриття до повного закриття.
+Стадія екрана	Метод в Android [Джерело 3]	Метод в iOS [Джерело 4]
+Екран створюється	onCreate()	viewDidLoad()
+З'являється на екрані	onStart()	viewWillAppear()
+Активний (можна натискати)	onResume()	viewDidAppear()
+Частково перекритий	onPause()	Немає прямого аналога
+Повністю сховався	onStop()	viewWillDisappear() / viewDidDisappear()
+Закрився і видалився	onDestroy()	deinit
+
+Головні помилки розробників:
+1. Зависання програми (Витік пам'яті): фонові оновлення не вимикаються при закритті екрана.
+2. Втрата тексту при повороті: екран Android перестворюється, дані полів зникають без збереження.
+3. Краш додатка у фоні: спроба оновити інтерфейс закритих або згорнутих екранів.
+
+4. Практичні наслідки відмінностей для розробника
+• Очищення пам'яті: В Android працює автоматичний Garbage Collector. В iOS розробник контролює зв'язки об'єктів вручну через weak.
+• Поворот екрана: В Android екран повністю перезапускається заново. В iOS система просто адаптує поточні елементи під новий розмір.
+• Робота у згорнутому стані: iOS суворо зупиняє фонові процеси додатків. Android дозволяє фонову роботу через Foreground Services.
+
+5. Висновок
+Для розробки нового проєкту обрано нативну розробку (Kotlin для Android + Swift для iOS) з архітектурою MVVM.
+Аргументи:
+1. Швидкість: програми працюють максимально плавно і швидко.
+2. Нові фішки: доступ до оновлень ОС з'являється в перший день.
+3. Менше багов: офіційні рідні інструменти забезпечують стабільність.
+Визнаний ризик:
+• Ціна та час: потрібно створювати та підтримувати два окремих додатки.
+
+6. Джерела
+Android Platform Architecture — https://source.android.com/docs/core/architecture (23.09.2026)
+About the iOS Technologies — https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/OSX_Technology_Overview/AbouttheiOSTechnologies/AbouttheiOSTechnologies.html (23.09.2026)
+Activity Lifecycle — https://developer.android.com/guide/components/activities/activity-lifecycle (23.09.2026)
+Managing Your App's Life Cycle — https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle (23.09.2026)
+
 
 
 
